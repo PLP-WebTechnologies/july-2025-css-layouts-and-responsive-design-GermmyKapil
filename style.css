@@ -1,0 +1,173 @@
+/* ============================================
+   GLOBAL RESET & BASE TYPOGRAPHY
+============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* 16px base */
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #fafafa;
+}
+
+/* Reusable spacing + utility */
+:root {
+  --clr-primary: #004466;
+  --clr-secondary: #e6f0f5;
+  --clr-light: #ffffff;
+  --clr-dark: #1a1a1a;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  --radius: 8px;
+}
+
+/* ============================================
+   HEADER & NAVIGATION (Flexbox)
+============================================ */
+.site-header {
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.site-header__title {
+  font-size: 1.8rem;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.site-nav__item a {
+  color: var(--clr-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.site-nav__item a:hover {
+  color: #aee2ff;
+}
+
+/* ============================================
+   MAIN LAYOUT (CSS Grid)
+============================================ */
+.layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+/* Content Area */
+.content h2 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+}
+
+.content p {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Cards (Flexbox inside content) */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.card {
+  flex: 1 1 200px;
+  background: var(--clr-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: #d9e9f2;
+}
+
+.card h3 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--clr-dark);
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--clr-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
+  color: var(--clr-primary);
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.site-footer {
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  text-align: center;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+============================================ */
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    flex-direction: column;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}

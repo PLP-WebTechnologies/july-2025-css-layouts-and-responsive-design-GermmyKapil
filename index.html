@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Responsive webpage built with Flexbox and CSS Grid for layout assignment." />
+  
+  <!-- Title -->
+  <title>Responsive Web Design Assignment</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===========================
+       HEADER
+  ============================ -->
+  <header class="site-header">
+    <div class="site-header__branding">
+      <h1 class="site-header__title">My Responsive Webpage</h1>
+    </div>
+    
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a href="#">Home</a></li>
+        <li class="site-nav__item"><a href="#">About</a></li>
+        <li class="site-nav__item"><a href="#">Projects</a></li>
+        <li class="site-nav__item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       MAIN LAYOUT
+  ============================ -->
+  <main class="layout">
+    <!-- Main Content -->
+    <section class="content" aria-labelledby="section-welcome">
+      <h2 id="section-welcome">Welcome</h2>
+      <p>
+        This responsive webpage demonstrates <strong>CSS Flexbox</strong> and <strong>CSS Grid</strong>. 
+        Resize your screen to see how the layout adapts seamlessly across devices.
+      </p>
+
+      <!-- Flexbox Cards -->
+      <div class="card-grid">
+        <article class="card"> 
+          <h3>Card 1</h3>
+          <p>Content or features here.</p>
+        </article>
+        <article class="card"> 
+          <h3>Card 2</h3>
+          <p>More highlights here.</p>
+        </article>
+        <article class="card"> 
+          <h3>Card 3</h3>
+          <p>Additional info here.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-labelledby="sidebar-title">
+      <h2 id="sidebar-title">Sidebar</h2>
+      <p>
+        This sidebar can hold supplementary information, quick links, or ads. 
+        On smaller devices, it shifts below the main content.
+      </p>
+    </aside>
+  </main>
+
+  <!-- ===========================
+       FOOTER
+  ============================ -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Germano Katalahali | Designed with PLP</p>
+  </footer>
+</body>
+</html>
